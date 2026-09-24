@@ -38,6 +38,14 @@
             background-position: center 25%;
             background-attachment: fixed;
         }
+
+        /* Disable fixed background on small screens to avoid mobile zoom/cropping issues */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+                background-position: center;
+            }
+        }
         .gallery-img {
             transition: transform 0.5s ease;
         }
@@ -144,7 +152,7 @@
                 <!-- Sailor 1 -->
                 <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 group">
                     <div class="relative h-96 overflow-hidden">
-                        <img src="images/Gustav.jpg" alt="Helm Profile" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="images/Gustav.JPG" alt="Helm Profile" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6">
                             <h3 class="text-3xl font-bold text-white">Gustav Aasholm-Bradley</h3>
                             <p class="text-nautical-400 font-semibold uppercase tracking-wider">Helm</p>
