@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CB Sailing 49er Racing Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        nautical: {
+                            900: '#0a192f',
+                            800: '#112240',
+                            500: '#0077b6',
+                            400: '#00b4d8',
+                        },
+                        sponsor: {
+                            gold: '#c5a059',
+                            dark: '#1a1a1a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for hero overlay and styling tweaks */
+        .hero-bg {
+            background-image: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.4)), url('images/team-photo2.jpeg');
+            background-size: cover;
+            background-position: center 25%;
+            background-attachment: fixed;
+        }
+        .gallery-img {
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        .maneuver-card {
+            overflow: hidden;
+        }
+        .maneuver-video {
+            display: block;
+            width: 100%;
+            height: 28rem;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.9) contrast(1.15) saturate(1.15);
+            background: #0a192f;
+        }
+        .maneuver-card .card-body {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50">
+
+    <!-- Sticky Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="text-white font-bold text-2xl tracking-tighter uppercase">CB Sailing<span class="text-nautical-400">49er</span></a>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="text-white hover:text-nautical-400 transition font-semibold text-sm uppercase tracking-wide">About Us</a>
+                    <a href="#class" class="text-white hover:text-nautical-400 transition font-semibold text-sm uppercase tracking-wide">The 49er</a>
+                    <a href="#sponsor" class="text-sponsor-gold hover:text-white transition font-semibold text-sm uppercase tracking-wide">Our Sponsor</a>
+                    <a href="#gallery" class="text-white hover:text-nautical-400 transition font-semibold text-sm uppercase tracking-wide">Gallery</a>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <a href="#contact" class="border border-nautical-400 text-nautical-400 hover:bg-nautical-400 hover:text-white transition px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wide">Contact</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-white hover:text-nautical-400 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-nautical-900 bg-opacity-95">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-white hover:bg-nautical-800 rounded-md font-medium uppercase text-sm">About Us</a>
+                <a href="#class" class="block px-3 py-2 text-white hover:bg-nautical-800 rounded-md font-medium uppercase text-sm">The 49er</a>
+                <a href="#sponsor" class="block px-3 py-2 text-sponsor-gold hover:bg-nautical-800 rounded-md font-medium uppercase text-sm">Our Sponsor</a>
+                <a href="#gallery" class="block px-3 py-2 text-white hover:bg-nautical-800 rounded-md font-medium uppercase text-sm">Gallery</a>
+                <a href="#contact" class="block px-3 py-2 text-nautical-400 hover:bg-nautical-800 rounded-md font-bold uppercase text-sm">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg h-screen flex items-center justify-center relative">
+        <div class="text-center px-4 max-w-5xl mx-auto">
+            <div class="inline-block mb-6 px-6 py-2 border border-white/30 rounded-full backdrop-blur-sm bg-white/10">
+                <p class="text-white/90 text-sm md:text-base font-medium tracking-widest uppercase">
+                    Supported by <span class="text-sponsor-gold font-bold">Copenhagen Concierges</span>
+                </p>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-6 uppercase tracking-tight shadow-sm">
+                CB <span class="text-transparent bg-clip-text bg-gradient-to-r from-nautical-400 to-nautical-500">SAILING</span><br>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light max-w-2xl mx-auto">
+                Join our journey on the road to mastery in the Olympic skiff class.
+            </p>
+            <a href="#about" class="inline-block bg-nautical-500 hover:bg-nautical-400 text-white font-bold py-4 px-10 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                Meet the Team
+            </a>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white/70 hover:text-white">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-nautical-900 uppercase tracking-wide mb-4">The Team</h2>
+                <div class="h-1 w-24 bg-nautical-500 mx-auto rounded"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
+                    Two sailors, one goal. Driven by passion, precision, and the pursuit of speed on the water.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Sailor 1 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 group">
+                    <div class="relative h-96 overflow-hidden">
+                        <img src="images/Gustav.jpg" alt="Helm Profile" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <h3 class="text-3xl font-bold text-white">Gustav Aasholm-Bradley</h3>
+                            <p class="text-nautical-400 font-semibold uppercase tracking-wider">Helm</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            With over 10 years of competitive sailing experience, Gustav brings tactical brilliance and quick decision making to the back of the boat. Steering the 49er requires a mix of aggressive maneuvering and delicate patience.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sailor 2 -->
+                <div class="bg-gray-50 rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-300 group">
+                    <div class="relative h-96 overflow-hidden">
+                        <img src="images/simon.jpeg" alt="Crew Profile" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6">
+                            <h3 class="text-3xl font-bold text-white">Simon Christoffersen</h3>
+                            <p class="text-nautical-400 font-semibold uppercase tracking-wider">Crew</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            The engine of the boat. Simon handles the massive sail area of the 49er out on the trapeze wire. Athleticism, power, and precision trimming are his trademarks in keeping the boat fast through the water.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Section -->
+    <section id="sponsor" class="py-24 bg-sponsor-dark text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-sponsor-gold opacity-10 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-nautical-500 opacity-10 blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <p class="text-sponsor-gold font-bold uppercase tracking-widest mb-2">Title Partner</p>
+                <h2 class="text-4xl font-bold uppercase tracking-wide mb-4">Copenhagen Concierges</h2>
+                <div class="h-1 w-24 bg-sponsor-gold mx-auto rounded"></div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center gap-16 bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10 backdrop-blur-sm">
+                <div class="w-full lg:w-1/2 flex justify-center">
+                    <img src="images/cc.jpeg" alt="Copenhagen Concierges Logo" class="max-w-full h-auto rounded-xl shadow-2xl">
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h3 class="text-2xl md:text-3xl font-light mb-6">Supporting our journey around the world circuit.</h3>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        Copenhagen Concierges helps make our 49er campaign possible by supporting the travel, logistics and movement required to compete at the highest level around the world racing circuit. Their backing helps us focus on performance, preparation and racing.
+                    </p>
+                    <a href="https://www.cph-concierges.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-sponsor-gold hover:text-white font-semibold uppercase tracking-wider transition group">
+                        Visit their website 
+                        <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The 49er Class Section -->
+    <section id="class" class="py-24 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- General Introduction -->
+            <div class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-sm font-bold text-nautical-500 uppercase tracking-widest mb-2">The Machine</h2>
+                    <h3 class="text-4xl font-bold text-nautical-900 uppercase tracking-wide mb-4">The 49er Skiff</h3>
+                    <div class="h-1 w-24 bg-nautical-500 mx-auto rounded"></div>
+                </div>
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="w-full lg:w-1/2">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl group">
+                            <video class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" autoplay loop muted playsinline poster="images/team-photo.jpg">
+                                <source src="videos/speed.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="absolute top-4 right-4 bg-nautical-900/90 backdrop-blur text-white px-5 py-2 rounded-lg font-bold shadow-lg uppercase tracking-wider text-sm border border-white/10">
+                                Olympic Class
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-1/2">
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                            The 49er is the pinnacle of high-performance Olympic sailing. Designed by Julian Bethwaite, it is a two-handed racing skiff featuring a twin trapeze system, a highly unstable lightweight hull, and a massive sail area.
+                        </p>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                            Sailing this boat at the highest level requires physical fitness, tactical brilliance, and fine-margin precision obtained through years of experience. Racing a 49er is often compared to driving a Formula 1 car on water — it demands respect, controlled aggression, and extreme precision.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-white p-5 rounded-xl shadow-md border border-gray-100 transform transition hover:-translate-y-1">
+                                <h4 class="font-bold text-nautical-900 text-2xl mb-1">4.99m</h4>
+                                <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider">Hull Length</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl shadow-md border border-gray-100 transform transition hover:-translate-y-1">
+                                <h4 class="font-bold text-nautical-900 text-2xl mb-1">59 m²</h4>
+                                <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider">Total Sail Area</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl shadow-md border border-gray-100 transform transition hover:-translate-y-1">
+                                <h4 class="font-bold text-nautical-900 text-2xl mb-1">94 kg</h4>
+                                <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider">Hull Weight</p>
+                            </div>
+                            <div class="bg-white p-5 rounded-xl shadow-md border border-gray-100 transform transition hover:-translate-y-1">
+                                <h4 class="font-bold text-nautical-900 text-2xl mb-1">25+ knots</h4>
+                                <p class="text-gray-500 text-xs font-semibold uppercase tracking-wider">Boat Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transition Text -->
+            <div class="text-center max-w-4xl mx-auto mb-16 px-4">
+                <i class="fas fa-quote-left text-nautical-400 text-3xl mb-4 opacity-50"></i>
+                <p class="text-2xl md:text-3xl text-nautical-900 font-light italic leading-relaxed">
+                    "The 49er is an unstable, high-speed skiff that punishes the smallest mistakes. Flawless teamwork and split-second timing are required to execute these fundamental maneuvers."
+                </p>
+            </div>
+
+            <!-- Maneuvers Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- The Start -->
+                <div class="maneuver-card bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <video autoplay loop muted playsinline poster="https://placehold.co/600x400/112240/ffffff?text=The+Start" class="maneuver-video border-b-4 border-nautical-500">
+                        <source src="videos/start.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3 class="text-2xl font-bold text-nautical-900 mb-3 uppercase tracking-wide">The Start</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Fighting for the perfect spot on the line. Milliseconds and inches separate the fleet before the gun even goes off. Acceleration, positioning and timing is everything.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- The Tack -->
+                <div class="maneuver-card bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <video autoplay loop muted playsinline poster="https://placehold.co/600x400/0077b6/ffffff?text=The+Tack" class="maneuver-video border-b-4 border-nautical-400">
+                        <source src="videos/tack.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3 class="text-2xl font-bold text-nautical-900 mb-3 uppercase tracking-wide">The Tack</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Moving through the boat at max speed. Both sailors must coordinate their weight transfer perfectly to maintain boatspeed while turning through the wind.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- The Gybe -->
+                <div class="maneuver-card bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <video autoplay loop muted playsinline poster="https://placehold.co/600x400/00b4d8/ffffff?text=The+Gybe" class="maneuver-video border-b-4 border-sponsor-gold">
+                        <source src="videos/gybe.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3 class="text-2xl font-bold text-nautical-900 mb-3 uppercase tracking-wide">The Gybe</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            An explosive manoeuvre at 20 knots. Flipping the massive spinnaker while steering downwind requires power, balance and finesse.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- The Bear-away -->
+                <div class="maneuver-card bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                    <video autoplay loop muted playsinline poster="https://placehold.co/600x400/0a192f/ffffff?text=The+Bear-away" class="maneuver-video border-b-4 border-nautical-900">
+                        <source src="videos/bear-away.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3 class="text-2xl font-bold text-nautical-900 mb-3 uppercase tracking-wide">The Bear-away</h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Turning away from the wind and hoisting the kite. The boat rapidly accelerates through the power-zone, drastically shifting the apparent wind and balancing point.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-nautical-900 uppercase tracking-wide mb-4">On The Water</h2>
+                <div class="h-1 w-24 bg-nautical-500 mx-auto rounded"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
+                    Highlights from our recent training camps and regattas.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="gallery-item relative overflow-hidden rounded-xl aspect-square shadow-md cursor-pointer">
+                    <img src="https://placehold.co/600x600/00b4d8/ffffff?text=Upwind+Sailing" alt="Sailing 1" class="gallery-img object-cover w-full h-full">
+                </div>
+                <div class="gallery-item relative overflow-hidden rounded-xl aspect-square shadow-md cursor-pointer">
+                    <img src="https://placehold.co/600x600/0077b6/ffffff?text=Spinnaker+Run" alt="Sailing 2" class="gallery-img object-cover w-full h-full">
+                </div>
+                <div class="gallery-item relative overflow-hidden rounded-xl aspect-square shadow-md cursor-pointer">
+                    <img src="https://placehold.co/600x600/112240/ffffff?text=Boat+Park" alt="Sailing 3" class="gallery-img object-cover w-full h-full">
+                </div>
+                <div class="gallery-item relative overflow-hidden rounded-xl aspect-square shadow-md cursor-pointer">
+                    <img src="https://placehold.co/600x600/c5a059/ffffff?text=Medal+Ceremony" alt="Sailing 4" class="gallery-img object-cover w-full h-full">
+                </div>
+                <div class="gallery-item relative overflow-hidden rounded-xl aspect-square shadow-md cursor-pointer">
+                    <img src="https://placehold.co/600x600/0a192f/ffffff?text=High+Wind+Action" alt="Sailing 5" class="gallery-img object-cover w-full h-full">
+                </div>
+                <div class="gallery-item relative overflow-hidden rounded-xl aspect-square shadow-md cursor-pointer">
+                    <img src="https://placehold.co/600x600/00b4d8/ffffff?text=Team+Focus" alt="Sailing 6" class="gallery-img object-cover w-full h-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-nautical-900 text-white pt-20 pb-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-2">
+                    <h4 class="text-3xl font-bold tracking-tighter uppercase mb-6">CB Sailing<span class="text-nautical-400">49er</span></h4>
+                    <p class="text-gray-400 max-w-md text-lg leading-relaxed mb-8">
+                        Professional 49er sailing team based in Denmark, competing internationally on the Olympic circuit. We are always looking for partners who share our drive for excellence.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-6 uppercase tracking-wider text-white/80">Get in Touch</h5>
+                    <ul class="space-y-4 text-gray-400">
+                        <li>
+                            <a href="mailto:gustavaabr@gmail.com" class="hover:text-nautical-400 transition flex items-center">
+                                <i class="fas fa-envelope w-6"></i> gustavaabr@gmail.com
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone w-6"></i> +45 42 70 26 16
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt w-6"></i> Copenhagen, Denmark
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-6 uppercase tracking-wider text-white/80">Follow Us</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-nautical-500 hover:-translate-y-1 transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-nautical-500 hover:-translate-y-1 transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center hover:bg-nautical-500 hover:-translate-y-1 transition duration-300"><i class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 CB Sailing 49er Racing Team. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-nautical-900', 'bg-opacity-95', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-nautical-900', 'bg-opacity-95', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        // Initialize scroll state on page load
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
