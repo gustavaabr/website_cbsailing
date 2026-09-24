@@ -72,6 +72,16 @@
                 object-position: center center;
             }
         }
+
+        /* Badge and title adjustments */
+        .hero-badge { transform: translateY(-36px); }
+        .hero-title { margin-top: 56px; }
+
+        /* Desktop: small nudge (larger than before) */
+        @media (min-width: 769px) {
+            .hero-badge { transform: translateY(-20px); }
+            .hero-title { margin-top: 24px; }
+        }
         .gallery-img {
             transition: transform 0.5s ease;
         }
@@ -141,12 +151,12 @@
         <img src="images/team-photo2.jpeg" alt="" class="hero-img">
         <div class="hero-overlay"></div>
         <div class="text-center px-4 max-w-5xl mx-auto relative z-20">
-            <div class="inline-block mb-6 px-6 py-2 border border-white/30 rounded-full backdrop-blur-sm bg-white/10">
+            <div class="inline-block hero-badge mb-6 px-6 py-2 border border-white/30 rounded-full backdrop-blur-sm bg-white/10">
                 <p class="text-white/90 text-sm md:text-base font-medium tracking-widest uppercase">
                     Supported by <span class="text-sponsor-gold font-bold">Copenhagen Concierges</span>
                 </p>
             </div>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-6 uppercase tracking-tight shadow-sm">
+            <h1 class="hero-title text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-6 uppercase tracking-tight shadow-sm">
                 CB <span class="text-transparent bg-clip-text bg-gradient-to-r from-nautical-400 to-nautical-500">SAILING</span><br>
             </h1>
             <p class="text-xl md:text-2xl text-gray-200 mb-10 font-light max-w-2xl mx-auto">
