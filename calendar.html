@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News &amp; Calendar · CB Sailing 49er Racing Team</title>
+    <meta name="description" content="Where CB Sailing is right now, upcoming regattas and training camps, and the latest team updates.">
+    <meta property="og:title" content="News &amp; Calendar · CB Sailing">
+    <meta property="og:image" content="https://49ercbsailing.com/images/hero.jpg">
+    <meta name="theme-color" content="#0D1826">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="nav" id="nav" aria-label="Main">
+        <div class="container nav-inner">
+            <a href="index.html" class="wordmark" aria-label="CB Sailing, home">CB Sailing<sup>49er</sup></a>
+            <div class="nav-links label">
+                <div class="nav-drop">
+                    <a href="index.html" class="nav-drop-btn">Home<svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg></a>
+                    <div class="nav-drop-menu">
+                        <a href="index.html#team">About Us</a>
+                        <a href="index.html#partner">Our Sponsor</a>
+                        <a href="index.html#boat">The 49er</a>
+                        <a href="index.html#manoeuvres">Manoeuvres</a>
+                    </div>
+                </div>
+                <a href="calendar.html" aria-current="page">News</a>
+                <a href="offers.html">Partnerships</a>
+                <a href="#contact" class="enquire">Contact</a>
+            </div>
+            <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9h22M3 19h22"/></svg>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobile-menu" hidden>
+            <a href="index.html">Home</a>
+            <div class="mobile-sub">
+                <a href="index.html#team">About Us</a>
+                <a href="index.html#partner">Our Sponsor</a>
+                <a href="index.html#boat">The 49er</a>
+                <a href="index.html#manoeuvres">Manoeuvres</a>
+            </div>
+            <a href="calendar.html" aria-current="page">News</a>
+            <a href="offers.html">Partnerships</a>
+            <a href="#contact" class="enquire">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Page header -->
+    <header class="page-hero">
+        <img src="images/hero.jpg" alt="" class="page-hero-img">
+        <div class="container">
+            <span class="label brass">Season 2026–27</span>
+            <h1>News &amp; <em>Calendar</em></h1>
+            <p>Where we are right now, and where we are racing next.</p>
+        </div>
+    </header>
+
+    <main>
+        <!--
+            ALL CONTENT BELOW IS EXAMPLE TEXT. Replace it with your real plans and updates.
+        -->
+
+        <!-- RIGHT NOW: update this block whenever you move or start something new -->
+        <section class="section" style="padding-bottom: 0">
+            <div class="container">
+                <article class="now reveal">
+                    <div class="now-copy">
+                        <span class="live label">Right now</span>
+                        <h2>Copenhagen, <em>Denmark</em></h2>
+                        <div class="now-meta">
+                            <div><span class="label">What</span><b>Physical training &amp; technique at home</b></div>
+                            <div><span class="label">When</span><b>Until New Year</b></div>
+                        </div>
+                        <p>We are spending November and December training at home, focusing on physical training and technique. The everyday training is going great: we are having 4–5 sessions on the water every week and have focused a lot on technique and starts, getting many repetitions in.</p>
+                        <p>We have also experimented quite a lot with our settings, testing different mast bend setups, and we are looking forward to testing it all against some fast boats.</p>
+                        <p>Furthermore, we have started a year-long program with a Team Denmark sports psychologist, using the Lighthouse Model. The main goal is keeping our heads in the boat: blocking out external distractions like shifting weather, competitors or event logistics, so we can purely focus on the sailing.</p>
+                        <span class="updated">Updated 15 November 2026</span>
+                    </div>
+                    <figure class="now-photo now-map-wrap">
+                        <div class="now-map" id="now-map" data-lat="55.7310" data-lng="12.5840" data-zoom="11" role="img" aria-label="Map with a red pin on Hellerup, north of Copenhagen"></div>
+                        <figcaption class="map-tag label">Hellerup · 55.73° N, 12.58° E</figcaption>
+                    </figure>
+                </article>
+            </div>
+        </section>
+
+        <!--
+            CALENDAR
+            One <details class="cal-item"> block per event, in date order. Click a row to open its details.
+            data-start and data-end (YYYY-MM-DD) drive the status on the right automatically:
+            Completed / Happening now / Next up / Upcoming.
+        -->
+        <section id="calendar" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="label brass">Schedule</span>
+                    <h2>Upcoming <em>events</em></h2>
+                    <p>Regattas and training camps for the season.</p>
+                </div>
+                <div class="cal reveal">
+
+                    <details class="cal-item">
+                        <summary class="cal-row" data-start="2027-01-04" data-end="2027-01-16">
+                            <div class="cal-date"><b>4–16</b><span class="label">Jan 2027</span></div>
+                            <div class="cal-event"><span class="label">Training camp</span><h3>Training with the Danish national team</h3></div>
+                            <div class="cal-place">Cádiz, Spain</div>
+                            <span class="cal-status label"></span>
+                            <span class="cal-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="cal-detail">
+                            <div class="cal-text">
+                                <div><span class="label brass">About the event</span><p>The Bay of Cádiz is one of Spain's classic winter training venues for Olympic classes, with strong Levante and Poniente winds and plenty of waves.</p></div>
+                                <div><span class="label brass">Our plan</span><p>We start the year in Cádiz with the Danish national team. For us it is a chance to line up against the best Danish boats every day, sharpen our boat handling in strong wind and get a lot of hours on the water early in the season.</p><span class="sign">Gustav &amp; Simon</span></div>
+                            </div>
+                            <dl class="cal-facts">
+                                <div><dt class="label">When</dt><dd>4 – 16 January 2027</dd></div>
+                                <div><dt class="label">Where</dt><dd>Cádiz, Andalusia, Spain</dd></div>
+                                <div><dt class="label">With</dt><dd>Danish national team</dd></div>
+                                <div><dt class="label">Type</dt><dd>Training camp</dd></div>
+                            </dl>
+                        </div>
+                    </details>
+
+                    <details class="cal-item">
+                        <summary class="cal-row" data-start="2027-02-15" data-end="2027-02-21">
+                            <div class="cal-date"><b>15–21</b><span class="label">Feb 2027</span></div>
+                            <div class="cal-event"><span class="label">Training</span><h3>Training block</h3></div>
+                            <div class="cal-place">Mallorca, Spain</div>
+                            <span class="cal-status label"></span>
+                            <span class="cal-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="cal-detail">
+                            <div class="cal-text">
+                                <div><span class="label brass">About the event</span><p>Palma is the centre of the European spring season for Olympic sailing. The afternoon sea breeze in the Bay of Palma gives reliable conditions for long training days.</p></div>
+                                <div><span class="label brass">Our plan</span><p>In February we move to Mallorca to settle in where the spring regattas are sailed. The focus is speed testing, starts and getting the boat set up for racing.</p><span class="sign">Gustav &amp; Simon</span></div>
+                            </div>
+                            <dl class="cal-facts">
+                                <div><dt class="label">When</dt><dd>15 – 21 February 2027</dd></div>
+                                <div><dt class="label">Where</dt><dd>Palma de Mallorca, Spain</dd></div>
+                                <div><dt class="label">Type</dt><dd>Training block</dd></div>
+                            </dl>
+                        </div>
+                    </details>
+
+                    <details class="cal-item">
+                        <summary class="cal-row" data-start="2027-03-05" data-end="2027-03-15">
+                            <div class="cal-date"><b>5–15</b><span class="label">Mar 2027</span></div>
+                            <div class="cal-event"><span class="label">Training &amp; regatta</span><h3>Training and MSC Regatta</h3><span class="cal-note">Mallorca Sailing Centre Regatta</span></div>
+                            <div class="cal-place">Palma de Mallorca, Spain</div>
+                            <span class="cal-status label"></span>
+                            <span class="cal-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="cal-detail">
+                            <div class="cal-text">
+                                <div><span class="label brass">About the event</span><p>The Mallorca Sailing Centre Regatta is sailed in the Bay of Palma.</p></div>
+                                <div><span class="label brass">Our plan</span><p>Our first racing of the season. We keep training in Palma through March and use the MSC Regatta to test everything in a real fleet before Princesa Sofía.</p><span class="sign">Gustav &amp; Simon</span></div>
+                            </div>
+                            <dl class="cal-facts">
+                                <div><dt class="label">When</dt><dd>5 – 15 March 2027</dd></div>
+                                <div><dt class="label">Where</dt><dd>Palma de Mallorca, Spain</dd></div>
+                                <div><dt class="label">Type</dt><dd>Training and regatta</dd></div>
+                            </dl>
+                        </div>
+                    </details>
+
+                    <details class="cal-item">
+                        <summary class="cal-row" data-start="2027-03-26" data-end="2027-04-03">
+                            <div class="cal-date"><b>26–3</b><span class="label">Mar–Apr 2027</span></div>
+                            <div class="cal-event"><span class="label">Regatta</span><h3>Trofeo SAR Princesa Sofía</h3></div>
+                            <div class="cal-place">Palma de Mallorca, Spain</div>
+                            <span class="cal-status label"></span>
+                            <span class="cal-toggle" aria-hidden="true"></span>
+                        </summary>
+                        <div class="cal-detail">
+                            <div class="cal-text">
+                                <div><span class="label brass">About the event</span><p>The 56th Trofeo SAR Princesa Sofía is one of the biggest Olympic class regattas of the year. Hundreds of boats from around the world race in the Bay of Palma.</p></div>
+                                <div><span class="label brass">Our plan</span><p>This is the big one of the spring for us. Everything from Cádiz to Mallorca builds towards racing well here against the best 49er teams in the world.</p><span class="sign">Gustav &amp; Simon</span></div>
+                            </div>
+                            <dl class="cal-facts">
+                                <div><dt class="label">When</dt><dd>26 March – 3 April 2027</dd></div>
+                                <div><dt class="label">Where</dt><dd>Palma de Mallorca, Spain</dd></div>
+                                <div><dt class="label">Type</dt><dd>International regatta</dd></div>
+                                <a class="cal-link" href="https://49er.org/events/56th-trofeo-sar-princesa-sofia/" target="_blank" rel="noopener noreferrer">Event page on 49er.org</a>
+                            </dl>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </section>
+
+        <!--
+            INSTAGRAM
+            Placeholder posts for now. Later this grid can be filled automatically from your Instagram account,
+            so new posts show up here by themselves. Replace #instagram-link with your profile URL,
+            e.g. https://www.instagram.com/yourhandle/
+        -->
+        <section id="updates" class="section" style="background: var(--paper-2)">
+            <div class="container">
+                <div class="section-head reveal" style="border-color: var(--rule-light)">
+                    <span class="label brass">Latest news</span>
+                    <h2>Follow us on <em>Instagram</em></h2>
+                    <p>Our latest posts from training and racing.</p>
+                </div>
+                <div class="insta-grid reveal">
+                    <a class="insta-post" href="#instagram-link" target="_blank" rel="noopener noreferrer">
+                        <img src="images/poster-start.jpg" alt="" loading="lazy">
+                        <span class="insta-overlay"><span class="label">View on Instagram</span><span class="insta-cap">Start practice</span></span>
+                    </a>
+                    <a class="insta-post" href="#instagram-link" target="_blank" rel="noopener noreferrer">
+                        <img src="images/poster-tack.jpg" alt="" loading="lazy">
+                        <span class="insta-overlay"><span class="label">View on Instagram</span><span class="insta-cap">Tacking drills</span></span>
+                    </a>
+                    <a class="insta-post" href="#instagram-link" target="_blank" rel="noopener noreferrer">
+                        <img src="images/poster-bear-away.jpg" alt="" loading="lazy">
+                        <span class="insta-overlay"><span class="label">View on Instagram</span><span class="insta-cap">Bear-away</span></span>
+                    </a>
+                    <a class="insta-post" href="#instagram-link" target="_blank" rel="noopener noreferrer">
+                        <img src="images/poster-gybe.jpg" alt="" loading="lazy">
+                        <span class="insta-overlay"><span class="label">View on Instagram</span><span class="insta-cap">Downwind</span></span>
+                    </a>
+                    <a class="insta-post" href="#instagram-link" target="_blank" rel="noopener noreferrer">
+                        <img src="images/sail.jpg" alt="" loading="lazy">
+                        <span class="insta-overlay"><span class="label">View on Instagram</span><span class="insta-cap">New sails</span></span>
+                    </a>
+                    <a class="insta-post" href="#instagram-link" target="_blank" rel="noopener noreferrer">
+                        <img src="images/poster-speed.jpg" alt="" loading="lazy">
+                        <span class="insta-overlay"><span class="label">View on Instagram</span><span class="insta-cap">Full speed</span></span>
+                    </a>
+                </div>
+                <div class="insta-foot reveal">
+                    <span class="insta-handle">@cbsailing</span>
+                    <a href="#instagram-link" target="_blank" rel="noopener noreferrer" class="link-line label">
+                        Follow on Instagram
+                        <svg viewBox="0 0 18 10" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M0 5h17M13 1l4 4-4 4"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="footer dark">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="about">
+                    <span class="wordmark">CB Sailing<sup>49er</sup></span>
+                    <p>Professional 49er sailing team based in Denmark, competing internationally on the Olympic circuit. We are always looking for partners who share our drive for excellence.</p>
+                </div>
+                <div class="footer-col">
+                    <span class="label">Get in Touch</span>
+                    <a href="mailto:gustavaabr@gmail.com">gustavaabr@gmail.com</a>
+                    <a href="tel:+4542702616">+45 42 70 26 16</a>
+                    <span>Copenhagen, Denmark</span>
+                </div>
+                <div class="footer-col">
+                    <span class="label">Explore</span>
+                    <a href="index.html#team">About Us</a>
+                    <a href="index.html#partner">Our Sponsor</a>
+                    <a href="index.html#boat">The 49er</a>
+                    <a href="index.html#manoeuvres">Manoeuvres</a>
+                    <a href="calendar.html">News</a>
+                    <a href="offers.html">Partnerships</a>
+                </div>
+            </div>
+            <div class="footer-base">
+                <span>&copy; 2026 CB Sailing 49er Racing Team. All rights reserved.</span>
+                <span>Supported by Copenhagen Concierges · Dansk Sejlunion · Team Danmark</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
